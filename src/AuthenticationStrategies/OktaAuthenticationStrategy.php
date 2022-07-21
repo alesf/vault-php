@@ -7,7 +7,7 @@ namespace Vault\AuthenticationStrategies;
  *
  * @package Vault\AuthenticationStrategy
  */
-class OktaAuthenticationStrategy extends AbstractPathAuthenticationStrategy
+class OktaAuthenticationStrategy extends AbstractUsernamePasswordAuthenticationStrategy
 {
     /**
      * @var string

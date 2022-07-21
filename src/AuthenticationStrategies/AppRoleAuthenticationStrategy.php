@@ -10,7 +10,7 @@ use Vault\ResponseModels\Auth;
  *
  * @package Vault\AuthenticationStrategy
  */
-class AppRoleAuthenticationStrategy extends AbstractAuthenticationStrategy
+class AppRoleAuthenticationStrategy extends AbstractPathAuthenticationStrategy
 {
     /**
      * @var string
@@ -23,22 +23,18 @@ class AppRoleAuthenticationStrategy extends AbstractAuthenticationStrategy
     protected $secretId;
 
     /**
-     * @var string
-     */
-    protected $name;
-
-    /**
      * AppRoleAuthenticationStrategy constructor.
      *
      * @param string $roleId
      * @param string $secretId
-     * @param string $name
+     * @param string $methodPathSegment
      */
-    public function __construct($roleId, $secretId, $name = 'approle')
+    public function __construct($roleId, $secretId, $methodPathSegment = 'approle')
     {
         $this->roleId = $roleId;
         $this->secretId = $secretId;
-        $this->name = $name;
+        $this->methodPathSegment = $methodPathSegment;
+        parent::__construct();
     }
 
     /**
@@ -50,7 +46,7 @@ class AppRoleAuthenticationStrategy extends AbstractAuthenticationStrategy
     public function authenticate(): ?Auth
     {
         $response = $this->client->write(
-            '/auth/' . $this->name . '/login',
+            '/auth/' . $this->methodPathSegment . '/login',
             [
                 'role_id' => $this->roleId,
                 'secret_id' => $this->secretId,

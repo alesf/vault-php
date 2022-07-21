@@ -7,7 +7,7 @@ namespace Vault\AuthenticationStrategies;
  *
  * @package Vault\AuthenticationStrategy
  */
-class LdapAuthenticationStrategy extends AbstractPathAuthenticationStrategy
+class LdapAuthenticationStrategy extends AbstractUsernamePasswordAuthenticationStrategy
 {
     /**
      * @var string

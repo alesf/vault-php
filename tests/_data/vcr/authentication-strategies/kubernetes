@@ -1,0 +1,46 @@
+
+-
+    request:
+        method: POST
+        url: 'http://127.0.0.1:8200/v1/auth/kubernetes/login'
+        headers:
+            Host: '127.0.0.1:8200'
+            Expect: null
+            Accept-Encoding: null
+            User-Agent: VaultPHP/1.0.0
+            Content-Type: application/json
+            Accept: null
+        body: '{"role":"internal-app","jwt":"test-token"}'
+    response:
+        status:
+            http_version: '1.1'
+            code: '200'
+            message: OK
+        headers:
+            Cache-Control: no-store
+            Content-Type: application/json
+            Date: 'Thu, 21 Jul 2022 12:30:30 GMT'
+            Content-Length: '785'
+        body: "{\"request_id\":\"74d19ff3-7dbe-378e-3241-a1abda43ae75\",\"lease_id\":\"\",\"renewable\":false,\"lease_duration\":0,\"data\":null,\"wrap_info\":null,\"warnings\":null,\"auth\":{\"client_token\":\"hvs.CAESIBWogu15N7r37D4s7x8dHwT_hri0yIlZv0tJMLUhG_6UGh4KHGh2cy5SMkRscUtvdkZBd2lEdmdORldSZ0hiQzc\",\"accessor\":\"1qHgsE3fMGMg9kt9mDWMoTNR\",\"policies\":[\"default\",\"internal-app\"],\"token_policies\":[\"default\",\"internal-app\"],\"metadata\":{\"role\":\"internal-app\",\"service_account_name\":\"internal-app\",\"service_account_namespace\":\"default\",\"service_account_secret_name\":\"internal-app-token-nqq2b\",\"service_account_uid\":\"cc27d7c7-c10a-4f68-9262-a0464317f683\"},\"lease_duration\":86400,\"renewable\":true,\"entity_id\":\"005e6309-d67f-d1db-d5fa-bfaa206815e7\",\"token_type\":\"service\",\"orphan\":true,\"mfa_requirement\":null,\"num_uses\":0}}\n"
+-
+    request:
+        method: GET
+        url: 'http://127.0.0.1:8200/v1/auth/token/lookup-self'
+        headers:
+            Host: '127.0.0.1:8200'
+            Accept-Encoding: null
+            User-Agent: VaultPHP/1.0.0
+            Content-Type: application/json
+            X-Vault-Token: hvs.CAESIBWogu15N7r37D4s7x8dHwT_hri0yIlZv0tJMLUhG_6UGh4KHGh2cy5SMkRscUtvdkZBd2lEdmdORldSZ0hiQzc
+            Accept: null
+    response:
+        status:
+            http_version: '1.1'
+            code: '200'
+            message: OK
+        headers:
+            Cache-Control: no-store
+            Content-Type: application/json
+            Date: 'Thu, 21 Jul 2022 12:30:31 GMT'
+            Content-Length: '929'
+        body: "{\"request_id\":\"af4a5639-3d9c-1fe3-7426-feabc6706023\",\"lease_id\":\"\",\"renewable\":false,\"lease_duration\":0,\"data\":{\"accessor\":\"1qHgsE3fMGMg9kt9mDWMoTNR\",\"creation_time\":1658406630,\"creation_ttl\":86400,\"display_name\":\"kubernetes-default-internal-app\",\"entity_id\":\"005e6309-d67f-d1db-d5fa-bfaa206815e7\",\"expire_time\":\"2022-07-22T12:30:30.951081946Z\",\"explicit_max_ttl\":0,\"id\":\"hvs.CAESIBWogu15N7r37D4s7x8dHwT_hri0yIlZv0tJMLUhG_6UGh4KHGh2cy5SMkRscUtvdkZBd2lEdmdORldSZ0hiQzc\",\"issue_time\":\"2022-07-21T12:30:30.951103011Z\",\"meta\":{\"role\":\"internal-app\",\"service_account_name\":\"internal-app\",\"service_account_namespace\":\"default\",\"service_account_secret_name\":\"internal-app-token-nqq2b\",\"service_account_uid\":\"cc27d7c7-c10a-4f68-9262-a0464317f683\"},\"num_uses\":0,\"orphan\":true,\"path\":\"auth/kubernetes/login\",\"policies\":[\"default\",\"internal-app\"],\"renewable\":true,\"ttl\":86399,\"type\":\"service\"},\"wrap_info\":null,\"warnings\":null,\"auth\":null}\n"

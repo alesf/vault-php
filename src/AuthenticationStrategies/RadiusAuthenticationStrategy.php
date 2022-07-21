@@ -7,7 +7,7 @@ namespace Vault\AuthenticationStrategies;
  *
  * @package Vault\AuthenticationStrategy
  */
-class RadiusAuthenticationStrategy extends AbstractPathAuthenticationStrategy
+class RadiusAuthenticationStrategy extends AbstractUsernamePasswordAuthenticationStrategy
 {
     /**
      * @var string
